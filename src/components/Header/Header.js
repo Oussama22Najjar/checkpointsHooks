@@ -1,5 +1,5 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
-import AddMovie, {addMovie} from "../AddMovie/AddMovie";
+import AddMovie  from "../AddMovie/AddMovie";
 
 const Header = ({ addMovie }) => {
  return (

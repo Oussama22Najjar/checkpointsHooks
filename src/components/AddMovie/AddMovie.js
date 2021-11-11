@@ -13,11 +13,12 @@ const customStyles = {
     },
   };
   
-  const AddMovie = ({ AddMovie }) => {
+  const AddMovie = ({ addMovie }) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
   
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [movieName, setMovieName] = useState("");
+    const [date, setDate] = useState("");
+    const [season, setSeason] = useState("");
     const [photo, setPhoto] = useState("");
   
     function openModal() {
@@ -31,17 +32,18 @@ const customStyles = {
     const submitMovie = (e) => {
       e.preventDefault();
       let newMovie = {
-        firstName: firstName,
-        lastName: lastName,
+        movieName: movieName,
+        date: date,
+        season: season,
         photo: photo,
       };
   
-      AddMovie(newMovie);
+      addMovie(newMovie);
       closeModal();
     };
     return (
       <div>
-        <button onClick={openModal}>Open Modal</button>
+        <button onClick={openModal}>Add Movie</button>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -51,19 +53,19 @@ const customStyles = {
           <button onClick={closeModal}>close</button>
           <Form>
             <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label>First Name : </Form.Label>
+              <Form.Label>Movie Name : </Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter your first name .."
-                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Movie name .."
+                onChange={(e) => setMovieName(e.target.value)}
               />
             </Form.Group>
   
             <Form.Group className="mb-3" controlId="formGridAddress1">
-              <Form.Label>Second Name :</Form.Label>
+              <Form.Label>Movie Date :</Form.Label>
               <Form.Control
-                placeholder="Enter yout second name .."
-                onChange={(e) => setLastName(e.target.value)}
+                placeholder="Movie date .."
+                onChange={(e) => setDate(e.target.value)}
               />
             </Form.Group>
   
@@ -72,6 +74,13 @@ const customStyles = {
               <Form.Control
                 placeholder="Enter you image adress ..."
                 onChange={(e) => setPhoto(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formGridAddress2">
+              <Form.Label> Season : </Form.Label>
+              <Form.Control
+                placeholder="Season ..."
+                onChange={(e) => setSeason(e.target.value)}
               />
             </Form.Group>
   

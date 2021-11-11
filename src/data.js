@@ -1,14 +1,14 @@
 export const data = [
 {
-    movieName: "",
-    season: "",
-    date: "",
-    photo:"",
+    movieName: "test",
+    season: "test",
+    date: "test",
+    photo:"test",
 },
 {
-    movieName: "",
-    season: "",
-    date: "",
-    photo:"",
+    movieName: "test1",
+    season: "test1",
+    date: "test1",
+    photo:"test1",
 },
 ];

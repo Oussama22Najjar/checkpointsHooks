@@ -11,7 +11,7 @@ const addMovie = (newMovies) => {
 }  ;
 return (
     <div>
-      <header addMovie={addMovie}/>
+      <Header addMovie={addMovie}/>
         <MoviesList movies={movies}/>
 
     </div>
