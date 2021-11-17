@@ -2,6 +2,9 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import AddMovie  from "../AddMovie/AddMovie";
 
 const Header = ({ addMovie }) => {
+const getSearchTerm = () =>{
+  props.searchkeyword(inputEl.current.value);
+};
  return (
    <div>
     <Navbar bg="dark" variant="dark">
@@ -15,6 +18,13 @@ const Header = ({ addMovie }) => {
           <AddMovie addMovie={addMovie} />
         </Container>
       </Navbar>
+      <div className="ui search">
+        <div className="ui icon input">
+          <input ref={inputEl} type="text" placeholder="search movies"
+           className="prompt" value={props.term} onChange={ getSearchTerm}/>
+        <i className="search icon"></i>
+        </div>
+        </div>
 </div>
 )
 }

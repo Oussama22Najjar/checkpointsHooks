@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 
 const MoviesList = (props) => {
@@ -9,6 +9,7 @@ const MoviesList = (props) => {
       ))}
     </div>
   );
+const inputEl = useRef("");
 };
 
 export default MoviesList;
